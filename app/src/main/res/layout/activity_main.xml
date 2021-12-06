@@ -12,28 +12,29 @@
         android:id="@+id/tv_point"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="320dp"
+        android:layout_marginTop="200dp"
         android:textSize="40sp"
         app:layout_constraintBottom_toTopOf="@+id/btn_start"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/tv_people"
-        app:layout_constraintVertical_bias="0.0" />
+        app:layout_constraintVertical_bias="0.772" />
 
     <TextView
         android:id="@+id/tv_pnum"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="25dp"
-        android:layout_marginEnd="64dp"
-        android:layout_marginRight="64dp"
-        android:layout_marginBottom="183dp"
+        android:layout_marginEnd="48dp"
+        android:layout_marginRight="48dp"
+        android:layout_marginBottom="32dp"
         android:text="0.00"
         android:textSize="60sp"
         app:layout_constraintBottom_toTopOf="@+id/btn_start"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/tv_people3"
-        app:layout_constraintVertical_bias="0.0" />
+        app:layout_constraintVertical_bias="0.137" />
 
     <TextView
         android:id="@+id/tv_people3"
@@ -45,10 +46,10 @@
         android:textSize="60sp"
         app:layout_constraintBottom_toTopOf="@+id/btn_start"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.793"
+        app:layout_constraintHorizontal_bias="0.758"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/tv_people"
-        app:layout_constraintVertical_bias="0.219" />
+        app:layout_constraintVertical_bias="0.339" />
 
     <TextView
         android:id="@+id/tv_people2"
@@ -63,35 +64,36 @@
         app:layout_constraintHorizontal_bias="0.2"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/tv_people"
-        app:layout_constraintVertical_bias="0.189" />
+        app:layout_constraintVertical_bias="0.312" />
 
     <TextView
         android:id="@+id/tv_timer"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="64dp"
-        android:layout_marginLeft="64dp"
+        android:layout_marginStart="60dp"
+        android:layout_marginLeft="60dp"
         android:layout_marginTop="25dp"
-        android:layout_marginBottom="183dp"
+        android:layout_marginBottom="32dp"
         android:text="0.00"
         android:textSize="60sp"
         app:layout_constraintBottom_toTopOf="@+id/btn_start"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/tv_people2"
-        app:layout_constraintVertical_bias="0.0" />
+        app:layout_constraintVertical_bias="0.137" />
 
     <TextView
         android:id="@+id/tv_people"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:fontFamily="@font/cookierunbold"
         android:text="참가자1"
         android:textSize="60sp"
-        android:fontFamily="@font/cookierunbold"
         app:layout_constraintBottom_toTopOf="@+id/btn_start"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.126" />
+        app:layout_constraintVertical_bias="0.28" />
 
     <Button
         android:id="@+id/btn_start"
@@ -103,8 +105,22 @@
         app:backgroundTint="#196688"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.441"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.893" />
+        app:layout_constraintVertical_bias="0.93" />
+
+    <!-- 광고 추가-->
+    <com.google.android.gms.ads.AdView
+        xmlns:ads="http://schemas.android.com/apk/res-auto"
+        android:id="@+id/adView2"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        ads:adSize="BANNER"
+        ads:adUnitId="ca-app-pub-8015576045680987/9932043414">
+    </com.google.android.gms.ads.AdView>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

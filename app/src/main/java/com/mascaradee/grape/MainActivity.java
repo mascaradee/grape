@@ -11,6 +11,12 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 
+import com.google.android.gms.ads.AdRequest;
+import com.google.android.gms.ads.AdView;
+import com.google.android.gms.ads.MobileAds;
+import com.google.android.gms.ads.initialization.InitializationStatus;
+import com.google.android.gms.ads.initialization.OnInitializationCompleteListener;
+
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.LinkedList;
@@ -21,17 +27,32 @@ import java.util.TimerTask;
 
 public class MainActivity extends AppCompatActivity {
 
-    public static int sec;
-    public static boolean isRunning;
-    public static int stage = 1;
-    public static int p_num = 3; // 참가인원
-    public static int k = 1; // 기준
+    private static int sec;
+    private static boolean isRunning;
+    private static int stage = 1;
+    private static int p_num = 3; // 참가인원
+    private static int k = 1; // 기준
     List<Float> p_list = new ArrayList<>();
+    private static boolean isBlind = false;
+    private AdView adView;
+    private AdView adView2;
+    private AdView adView3;
 
-    public static boolean isBlind = false;
 
     public void start() {
         setContentView(R.layout.activity_start);
+
+        MobileAds.initialize(this, new OnInitializationCompleteListener() {
+            @Override
+            public void onInitializationComplete(InitializationStatus initializationStatus) {
+            }
+        });
+
+        adView = findViewById(R.id.adView);
+        AdRequest adRequest = new AdRequest.Builder().build();
+        adView.loadAd(adRequest);
+
+
         TextView tv_pnum = findViewById(R.id.tv_pnum);
         Button btn_minus = findViewById(R.id.btn_minus);
         Button btn_plus = findViewById(R.id.btn_plus);
@@ -78,6 +99,16 @@ public class MainActivity extends AppCompatActivity {
 
     public void end() {
         setContentView(R.layout.activity_end);
+
+        MobileAds.initialize(this, new OnInitializationCompleteListener() {
+            @Override
+            public void onInitializationComplete(InitializationStatus initializationStatus) {
+            }
+        });
+        adView3= findViewById(R.id.adView3);
+        AdRequest adRequest = new AdRequest.Builder().build();
+        adView3.loadAd(adRequest);
+
         TextView tv_lpoint = findViewById(R.id.tv_lpoint);
         TextView tv_last = findViewById(R.id.tv_last);
         Button btn_init = findViewById(R.id.btn_init);
@@ -100,6 +131,15 @@ public class MainActivity extends AppCompatActivity {
 
     public void main() {
         setContentView(R.layout.activity_main);
+
+        MobileAds.initialize(this, new OnInitializationCompleteListener() {
+            @Override
+            public void onInitializationComplete(InitializationStatus initializationStatus) {
+            }
+        });
+        adView2= findViewById(R.id.adView2);
+        AdRequest adRequest = new AdRequest.Builder().build();
+        adView2.loadAd(adRequest);
 
         TextView tv = findViewById(R.id.tv_pnum);
         TextView tv_t = findViewById(R.id.tv_timer);
