@@ -2,9 +2,10 @@
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/btn_click"
+    android:id="@+id/bg_main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="#CBE5E8"
     tools:context=".MainActivity">
 
     <Button
@@ -13,6 +14,7 @@
         android:layout_height="wrap_content"
         android:text="-"
         android:textSize="60sp"
+        app:backgroundTint="#A9F1AC"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.196"
@@ -26,6 +28,7 @@
         android:layout_height="wrap_content"
         android:text="+"
         android:textSize="60sp"
+        app:backgroundTint="#A9F1AC"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.801"
@@ -63,10 +66,12 @@
 
     <Button
         android:id="@+id/btn_start"
+        style="@style/customButtonFontStyle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="시작"
         android:textSize="60sp"
+        app:backgroundTint="#308A34"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.527"
@@ -76,10 +81,12 @@
 
     <Button
         android:id="@+id/btn_blind"
+        style="@style/customButtonFontStyle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Blind 모드 OFF"
         android:textSize="30sp"
+        app:backgroundTint="#618E63"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.527"

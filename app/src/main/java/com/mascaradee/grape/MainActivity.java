@@ -3,7 +3,9 @@ package com.mascaradee.grape;
 import static java.lang.Math.abs;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.constraintlayout.widget.ConstraintLayout;
 
+import android.graphics.Color;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -104,14 +106,22 @@ public class MainActivity extends AppCompatActivity {
         TextView tv_p = findViewById(R.id.tv_point);
         TextView tv_people = findViewById(R.id.tv_people);
         Button btn = findViewById(R.id.btn_start);
+        ConstraintLayout bg_main = findViewById(R.id.bg_main);
+
+        String[] colorList = {"#673AB7","#3F51B5","#2196F3","#009688","#FFEB3B","#FF5722","#F44336"};
+        int color_index = k % 7 - 1;
+        if(color_index == -1) {
+            color_index = 6;
+        }
+        String selectedColor = colorList[color_index];
+        bg_main.setBackgroundColor(Color.parseColor(selectedColor));
 
         // 랜덤 숫자(초기화 추가) + 타이머 + 시간차(초기화 추가) : 시간 차 적은 사람이 위너
         Random rn = new Random();
         int num = rn.nextInt(201);
         tv.setText(String.valueOf(Float.valueOf(num)/100));
         btn.setText("시작");
-        tv_people.setText("참가자" + k);
-
+        tv_people.setText("참가자 " + k);
 
         sec = 0;
         isRunning = false;
